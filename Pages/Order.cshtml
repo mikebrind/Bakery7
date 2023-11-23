@@ -1,0 +1,39 @@
+﻿@page "{id:int}"
+@model Bakery.Pages.OrderModel
+@{
+  ViewData["Title"] = "Place your order";
+}
+<div class="progress mb-3" style="height:2.5rem;">
+  <div class="progress-bar w-50" style="font-size:1.5rem;" role="progressbar">Select Item</div>
+</div>
+<div class="row">
+  <div class=" col-3">
+    <h3>@Model.Product.Name</h3>
+    <img class="img-fluid" src="/images/products/@Model.Product.ImageName" title="@Model.Product.Name" />
+    <p>@Model.Product.Description</p>
+  </div>
+<form class="col-9" method="post">
+  <div class="form-group mb-3">
+    <label asp-for="Quantity" class="form-label"></label>
+    <input asp-for="Quantity" class="form-control" /> 
+    <span asp-validation-for="Quantity"></span>
+  </div>
+  @* <div class="form-group mb-3">
+    <label asp-for="OrderEmail" class="form-label"></label>
+    <input asp-for="OrderEmail" class="form-control " />
+    <span asp-validation-for="OrderEmail"></span>
+  </div>
+  <div class="form-group mb-3">
+    <label asp-for="ShippingAddress" class="form-label"></label>
+    <textarea asp-for="ShippingAddress" class="form-control"></textarea>
+    <span asp-validation-for="ShippingAddress"></span>
+  </div> *@
+  <input type="hidden" asp-for="UnitPrice" value="@Model.Product.Price"/>
+  <div class="mb-3"> Total cost: <span id="orderTotal">@Model.Product.Price.ToString("c")</span></div>
+  <button type="submit" class="btn bn-sm btn-primary">Place order</button>
+</form>
+</div>
+@section scripts{
+    <partial name="_ValidationScriptsPartial" />
+    <script src="~/js/order.js"></script>
+}

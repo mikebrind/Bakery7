@@ -1,0 +1,9 @@
+﻿@page
+@model Bakery.Pages.OrderSuccessModel
+@{
+}
+<div class="progress mb-3" style="height:2.5rem;">
+  <div class="progress-bar w-100" style="font-size:1.5rem;" role="progressbar">Confirmation</div>
+</div>
+<h1>Order Confirmation</h1>
+@Html.Raw(TempData[nameof(OrderModel.Confirmation)])

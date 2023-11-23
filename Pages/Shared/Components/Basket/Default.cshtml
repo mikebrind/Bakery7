@@ -1,0 +1,10 @@
+﻿@model Bakery.Models.Basket
+@if(Model.Items.Any())
+{
+    <a asp-page="/Checkout" class="btn btn-sm btn-primary position-relative" title="@Model.NumberOfItems items in basket">
+        <i class="bi bi-cart4"></i>
+        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+            @Model.NumberOfItems
+        </span>
+    </a>
+}

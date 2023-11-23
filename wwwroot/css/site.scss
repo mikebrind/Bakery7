@@ -1,0 +1,41 @@
+@import "../lib/bootstrap/dist/scss/functions";
+@import "../lib/bootstrap/dist/scss/variables";
+
+html {
+  font-size: 0.875rem;
+}
+
+@media (min-width: 768px) {
+  html {
+      font-size: 1rem;
+  }
+}
+
+body {
+  margin-bottom: 60px;
+}
+
+.navbar-brand {
+  font-family: Limelight, sans-serif;
+  font-size: 2.5rem;
+}
+
+.navbar-nav {
+  justify-content: flex-end;
+}
+
+.input-validation-error, 
+.input-validation-error:focus {
+  background: $red-200;
+  color: $red-500;
+}
+
+.input-validation-error:focus{
+  border-color: $red-500;
+  box-shadow: 0 0 0 0.2rem $red-200;
+}
+    
+.field-validation-error,
+.validation-summary-errors {
+  color: $red-500;
+}
